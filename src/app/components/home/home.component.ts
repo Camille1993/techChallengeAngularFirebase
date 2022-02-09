@@ -11,7 +11,6 @@ import { AddGameComponent } from 'src/app/modal/add-game/add-game.component';
 export class HomeComponent implements OnInit {
 
   constructor(
-    private gameService: GameService,
     private modal: NgbModal
   ) { }
 

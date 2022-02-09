@@ -1,1 +1,28 @@
-<p>edit-game works!</p>
+<div>
+  <h4>Update Game</h4>
+  <form #gameForm="ngForm" (ngSubmit)="onUpdate()">
+    <div class="form-group" style=" margin: 0 15px;">
+       <label>Game Name</label>
+       <input class="form-control" name="name" #name="ngModel" 
+        [(ngModel)]="game.name" placeholder="Game Name" required>
+    </div>
+
+    <div class="form-group" style=" margin: 0 15px;">
+      <label>Image Url</label>
+      <input class="form-control col-xs-4" name="image" #name="ngModel" 
+        [(ngModel)]="game.image" placeholder="Image" required>
+    </div>
+
+     <div class="form-group" style=" margin: 0 15px;">
+       <label>Description</label>
+       <textarea class="form-control" style="height: 150px;" name="description" #name=ngModel 
+         [(ngModel)]="game.description" required></textarea>
+      </div>
+
+        <div class="form-group float-right">
+           <button type="submit" class="btn btn-warning" style="margin-top: 15px;" 
+             [disabled]="!gameForm.valid" [disabled]="gameForm.invalid">
+              <i class="bi bi-plus"></i>UpdateGame</button>
+        </div>
+    </form>
+</div>

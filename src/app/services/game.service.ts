@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Firestore, addDoc, collection, collectionData, doc, docData, setDoc } from '@angular/fire/firestore';
+import { deleteDoc } from 'firebase/firestore';
 import { Observable } from 'rxjs';
 import { Game } from '../models/game.model';
 
@@ -28,5 +29,9 @@ export class GameService {
   updateGame(game: Game) {
     const gameDocRef = doc(this.firestore, `videoGames/${game.id}`);
     return setDoc(gameDocRef, game);
+  }
+  deleteGame(game: Game) {
+    const gameDocRef = doc(this.firestore, `videoGames/${game.id}`);
+    return deleteDoc(gameDocRef);
   }
 }

@@ -16,5 +16,6 @@ export class GamesComponent implements OnInit {
     this.gameService.getGames().subscribe((res: Game[]) => {
       this.games = res;
     })
-  }
+  } 
+
 }

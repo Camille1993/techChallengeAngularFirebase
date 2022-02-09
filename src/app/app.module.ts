@@ -11,7 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { GamesComponent } from './components/games/games.component';
 import { GameComponent } from './components/game/game.component';
 import { EditGameComponent } from './modal/edit-game/edit-game.component';
-import { AddGameComponent } from './modal/add-game/add-game.component';
+
 
 
 @NgModule({
@@ -20,8 +20,7 @@ import { AddGameComponent } from './modal/add-game/add-game.component';
     HomeComponent,
     GamesComponent,
     GameComponent,
-    EditGameComponent,
-    AddGameComponent
+    EditGameComponent
   ],
   imports: [
     BrowserModule,

@@ -34,7 +34,11 @@ export class GameComponent implements OnInit {
       windowClass: 'dark-modal'
     });
     modalRef.componentInstance.id = game.id;
-
+  }
+  deleteGame(game: Game) {
+    if (confirm('Are you sure to wanting delete that game ?') === true) {
+      this.gameService.deleteGame(game).then(() => console.log('delete successful !'))
+    }
   }
 
 }

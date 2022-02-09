@@ -7,11 +7,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
+import { HomeComponent } from './components/home/home.component';
+import { GamesComponent } from './components/games/games.component';
+import { GameComponent } from './components/game/game.component';
+import { EditGameComponent } from './modal/edit-game/edit-game.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    GamesComponent,
+    GameComponent,
+    EditGameComponent
   ],
   imports: [
     BrowserModule,

@@ -10,7 +10,7 @@ export class GameService {
 
   constructor(private firestore : Firestore) { }
 
-  addGame(game: Game) {
+  addNewGame(game: Game) {
     const gamesRef = collection(this.firestore, 'videoGames'); 
     return addDoc(gamesRef, game);
   }

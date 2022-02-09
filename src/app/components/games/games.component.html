@@ -1,1 +1,12 @@
-<p>games works!</p>
+<div class="container" *ngIf="games">
+  <div *ngFor="let game of games">
+    <div class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="game.image" [alt]="game.name">
+    <div class="card-body">
+      <h5 class="card-title">{{ game.name }}</h5>
+      <a href="#" class="btn btn-dark" [routerLink]="['/games', game.id]">details</a>
+    </div>
+  </div>
+
+  </div>
+</div>

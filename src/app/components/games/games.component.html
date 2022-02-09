@@ -1,6 +1,6 @@
 <div *ngIf="games" class="d-flex justify-content-around flex-wrap">
   <div *ngFor="let game of games">
-      <div class="card" style="width: 20rem;">
+      <div class="card" style="width: 20rem; margin-bottom: 4rem;">
         <img class="card-img-top" [src]="game.image" [alt]="game.name">
         <div class="card-body">
           <h5 class="card-title">{{ game.name }}</h5>

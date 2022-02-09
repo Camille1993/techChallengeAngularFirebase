@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, collectionData, doc, docData } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Game } from '../models/game.model';
 
@@ -18,5 +18,9 @@ export class GameService {
   getGames(): Observable<Game[]> {
     const gamesRef = collection(this.firestore, 'videoGames');
     return collectionData(gamesRef, { idField: 'id' }) as Observable<Game[]>;
+  }
+  getGameByID(id: string) {
+    const gamesRef = doc(this.firestore, `videoGames/${id}`);
+    return docData(gamesRef, { idField: 'id' }) as Observable<Game>;
   }
 }

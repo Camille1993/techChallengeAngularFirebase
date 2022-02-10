@@ -1,7 +1,7 @@
 <div class="container">
   <div *ngIf="game">
     <h2 style="text-align: center; color: lightgoldenrodyellow;"> {{ game.name }}</h2>
-    <img [src]="game.image" [alt]="game.name" class="img-fluid" style="width: 100%;">
+    <img [src]="game.image" [alt]="game.name" class="img-fluid w-100">
     <p style="padding-top: 2rem; color: lightgoldenrodyellow;">{{ game.description }}</p>
     <div class="row">
       <button type="button" class="btn btn-warning col-3" (click)="editModal(game)">Update Game</button>

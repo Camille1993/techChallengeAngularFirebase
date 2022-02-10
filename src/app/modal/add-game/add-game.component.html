@@ -1,28 +1,28 @@
 <div>
-  <h4>Add New Game</h4>
+  <h4 class="text-center pt-3">Add New Game</h4>
   <form #gameForm="ngForm" (ngSubmit)="onSubmit(gameForm)">
-    <div class="form-group">
+    <div class="form-group mx-3">
        <label>Game Name</label>
        <input class="form-control" name="name" #name="ngModel" 
         [(ngModel)]="game.name" placeholder="Game Name" required>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mx-3">
       <label>Image Url</label>
       <input class="form-control" name="image" #name="ngModel" 
         [(ngModel)]="game.image" placeholder="Image" required>
     </div>
 
-     <div class="form-group">
+     <div class="form-group mx-3">
        <label>Description</label>
        <input class="form-control" name="description" #name=ngModel 
          [(ngModel)]="game.description" required>
       </div>
 
-        <div class="form-group float-right">
-           <button type="submit" class="btn btn-success" 
-             [disabled]="!gameForm.valid" [disabled]="gameForm.invalid">
-              <i class="bi bi-plus"></i>Add Game</button>
+        <div class="form-group float-right mt-3 mr-3">
+           <button type="submit" class="btn btn-warning" 
+            [disabled]="!gameForm.valid" [disabled]="gameForm.invalid">
+            Add Game</button>
         </div>
     </form>
 </div>

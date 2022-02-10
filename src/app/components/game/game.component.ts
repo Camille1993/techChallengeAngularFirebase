@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EditGameComponent } from 'src/app/modal/edit-game/edit-game.component';
 
@@ -14,12 +14,14 @@ import { GameService } from 'src/app/services/game.service';
 export class GameComponent implements OnInit {
   game!: Game;
 
-  constructor(private route: ActivatedRoute, 
+  constructor(
+    private activeRoute: ActivatedRoute,
+    private route: Router,
     private gameService: GameService,
     private modal: NgbModal) { }
 
   ngOnInit(): void {
-    const routeParams =this.route.snapshot.paramMap;
+    const routeParams =this.activeRoute.snapshot.paramMap;
     const GameIdFromRoute = String(routeParams.get('gameId'));
 
     this.gameService.getGameByID(GameIdFromRoute).subscribe((res: Game) => {     
@@ -37,7 +39,10 @@ export class GameComponent implements OnInit {
   }
   deleteGame(game: Game) {
     if (confirm('Are you sure to wanting delete that game ?') === true) {
-      this.gameService.deleteGame(game).then(() => console.log('delete successful !'))
+      this.gameService.deleteGame(game).then(() => {
+        console.log('delete successful !');
+        this.route.navigate(['/']);
+      })
     }
   }
 
